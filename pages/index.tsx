@@ -2,6 +2,7 @@ import styles from '@/styles/Home.module.css'
 import { GetServerSideProps } from 'next';
 import { useState } from 'react'
 import 'semantic-ui-css/semantic.min.css'
+import { Loader } from 'semantic-ui-react'
 
 interface SearchCatImage {
   id: string;
@@ -32,16 +33,19 @@ const fetchCatImage = async (): Promise<SearchCatImage> => {
 export default function Home({ initialCatImageUrl }: IndexPageProps) {
   // 状態変数を定義
   const [catImageUrl, setCatImageUrl] = useState(initialCatImageUrl);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async () => {
+    setIsLoading(true);
     const catImage = await fetchCatImage();
     setCatImageUrl(catImage.url)
+    setIsLoading(false);
   };
 
   return (
     <div className={styles.container}>
       <h1>猫画像アプリ</h1>
-      <img src={catImageUrl} alt="猫さん" />
+      {isLoading ? <Loader active size='huge' inline='centered' /> : <img src={catImageUrl} alt="猫さん" />}
       <button onClick={handleClick}>今日の猫さん</button>
     </div>
   );
