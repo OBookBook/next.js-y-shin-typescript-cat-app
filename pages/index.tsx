@@ -1,6 +1,7 @@
 import styles from '@/styles/Home.module.css'
 import { GetServerSideProps } from 'next';
 import { useState } from 'react'
+import 'semantic-ui-css/semantic.min.css'
 
 interface SearchCatImage {
   id: string;

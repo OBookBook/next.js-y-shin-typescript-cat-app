@@ -1,3 +1,11 @@
+■ 猫API
+https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
+■ React.semantic-ui
+https://react.semantic-ui.com/usage
+npm install semantic-ui-react semantic-ui-css
+
+index.tsx に import 'semantic-ui-css/semantic.min.css' を張り付ける
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
